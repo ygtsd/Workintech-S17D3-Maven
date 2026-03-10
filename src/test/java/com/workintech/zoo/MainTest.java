@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@ExtendWith(ResultAnalyzer.class)
+@ExtendWith(com.workintech.s17d2.ResultAnalyzer.class)
 class MainTest {
 
 
@@ -140,7 +140,7 @@ class MainTest {
         long now = System.currentTimeMillis();
 
 
-        ZooErrorResponse errorResponse = new ZooErrorResponse(404, "Not Found", now);
+        ZooErrorResponse errorResponse = new ZooErrorResponse("Not Found", 404, now);
 
 
         assertEquals(404, errorResponse.getStatus());
